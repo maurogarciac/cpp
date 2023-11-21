@@ -1,0 +1,10 @@
+#!/bin/bash
+ARGUMENTS="$1"
+OUTPUT=$ARGUMENTS.o    
+INPUT=$ARGUMENTS.asm
+
+echo find: $ARGUMENTS $OUTPUT $INPUT
+
+nasm -f elf64 -o $OUTPUT $INPUT
+
+ld $OUTPUT -o $ARGUMENTS
